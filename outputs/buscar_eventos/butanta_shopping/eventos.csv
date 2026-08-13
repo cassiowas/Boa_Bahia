@@ -1,0 +1,5 @@
+data_evento,evento,tipo,local,fonte_url,confirmado,observacoes
+2026-08-15,São Paulo FC x Coritiba (Campeonato Brasileiro),jogo_futebol,MorumBIS,https://www.spfcticket.net/proximos-jogos/,,
+2026-08-18,São Paulo FC x Bolívar (CONMEBOL Sul-Americana),jogo_futebol,MorumBIS,https://www.saopaulofc.net/calendario-de-jogos/,,
+2026-08-30,São Paulo FC - jogo mencionado sem adversário/horário confirmado na fonte,jogo_futebol,MorumBIS,https://www.saopaulofc.net/calendario-de-jogos/,,verificar adversário e horário antes de confirmar
+2026-08-01 a 2026-08-31,Sem shows confirmados no MorumBIS em agosto/2026 (estádio livre para jogos após os shows de Harry Styles em julho),show,MorumBIS,https://www.band.com.br/esportes/morumbi-tera-mais-6-shows-em-2026-veja-jogos-do-sao-paulo-afetados-202603131230,,checar novamente próximo à data - agenda de shows muda com frequência

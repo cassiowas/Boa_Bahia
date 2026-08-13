@@ -1,0 +1,8 @@
+data_evento,evento,tipo,local,fonte_url,confirmado,observacoes
+2026-08-13,"Estreia: O Fim da Rua (ação/aventura, com Anne Hathaway e Ewan McGregor)",estreia_filme,Cinemas (lançamento nacional),https://www.ingresso.com/noticias/lista-filmes-estreias-lancamentos-cinema-mes-agosto-2026,,verificar se está em cartaz no cinema do shopping
+2026-08-13,Estreia: Patrulha Canina - O Filme do Dino (animação infantil),estreia_filme,Cinemas (lançamento nacional),https://www.ingresso.com/noticias/lista-filmes-estreias-lancamentos-cinema-mes-agosto-2026,,verificar se está em cartaz no cinema do shopping
+2026-08-20,"Estreias diversas (Amigas Sem Filtro, Anistia 79, O Shaolin do Sertão 2, entre outras)",estreia_filme,Cinemas (lançamento nacional),https://www.ingresso.com/noticias/lista-filmes-estreias-lancamentos-cinema-mes-agosto-2026,,verificar se está em cartaz no cinema do shopping
+2026-08-27,"Estreias diversas (Coyote vs. Acme, Wil, entre outras)",estreia_filme,Cinemas (lançamento nacional),https://www.ingresso.com/noticias/lista-filmes-estreias-lancamentos-cinema-mes-agosto-2026,,verificar se está em cartaz no cinema do shopping
+2026-08-14,Estreia: Autobiografia do Vermelho,peca_teatro,Teatro Youtube,https://vivaacidadenews.com.br/entretenimento/teatro/musicais-em-sp-agosto-2026/,,checar distância/relevância para o Santa Cruz
+2026-08-08 a 2026-08-31,A Última Cova (temporada),peca_teatro,Teatro Cia da Revista,https://agendaculturalsaopaulo.com/programacao-teatro-sao-paulo/,,checar distância/relevância para o Santa Cruz
+2026-08-03,Ninguém Tá Bem (também em 10/08, 17/08 e 31/08),peca_teatro,Teatro Youtube,https://vivaacidadenews.com.br/entretenimento/teatro/musicais-em-sp-agosto-2026/,,checar distância/relevância para o Santa Cruz

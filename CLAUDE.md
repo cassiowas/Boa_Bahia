@@ -77,3 +77,23 @@ Collects hourly local temperature and holiday calendars for both stores.
   (defaults to the last 2 years). Writes to
   `outputs/coleta_temperatura_feriados/<loja>/temperatura.csv` and
   `.../feriados.csv` per the output convention above.
+
+### `/buscar_eventos` (custom command, not a plain script)
+
+There is no reliable free API for "all events near a shopping mall," so this
+is a web-search-driven workflow with mandatory human curation, defined in
+`.claude/commands/buscar_eventos.md`. Run it periodically (e.g. monthly) as
+`/buscar_eventos` in a Claude Code session: it searches the web for events
+near each store — São Paulo FC games and shows at MorumBIS for Butantã
+Shopping; movie premieres and theater plays for Shopping Metro Santa Cruz —
+and appends new candidates to:
+
+- `outputs/buscar_eventos/butanta_shopping/eventos.csv`
+- `outputs/buscar_eventos/shopping_metro_santa_cruz/eventos.csv`
+
+Columns: `data_evento,evento,tipo,local,fonte_url,confirmado,observacoes`.
+New rows are added with `confirmado`/`observacoes` empty; existing rows that
+already have those fields filled in (i.e. already reviewed) must never be
+overwritten or deleted — that's the curation record. Only rows with
+`confirmado` filled in should be treated as trustworthy enough to feed the
+final forecasting pipeline.
