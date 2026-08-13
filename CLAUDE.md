@@ -97,3 +97,27 @@ already have those fields filled in (i.e. already reviewed) must never be
 overwritten or deleted — that's the curation record. Only rows with
 `confirmado` filled in should be treated as trustworthy enough to feed the
 final forecasting pipeline.
+
+### `scripts/montar_base_demanda.py`
+
+The final join: reads temperature, holidays, and events for each store and
+writes one daily table per store, ready to be crossed with the validated
+sales history and fed into Cowork to generate the weekly purchase
+suggestion.
+
+- Reads `outputs/coleta_temperatura_feriados/<loja>/{temperatura,feriados}.csv`
+  and `outputs/buscar_eventos/<loja>/eventos.csv`.
+- Temperature is aggregated from hourly to daily (`temp_min_c`, `temp_max_c`,
+  `temp_media_c`) since the sales history to cross against is daily.
+- Events are only included if `confirmado` is filled in with an affirmative
+  value (`sim`/`s`/`yes`/`true`/`1`); unreviewed or rejected rows are
+  skipped. A `data_evento` range (`AAAA-MM-DD a AAAA-MM-DD`) is expanded
+  into one row per day in the range.
+- The output's date range is the union of dates present in any of the three
+  sources per store, so a future confirmed event isn't dropped just because
+  there's no temperature/holiday data for that day yet (those columns are
+  left blank in that case).
+- Run with `python scripts/montar_base_demanda.py`. Writes to
+  `outputs/montar_base_demanda/<loja>/base_demanda.csv`, columns: `data,
+  loja, temp_min_c, temp_max_c, temp_media_c, feriado, feriado_nome,
+  feriado_tipo, evento, evento_nome, evento_tipo, evento_local`.
