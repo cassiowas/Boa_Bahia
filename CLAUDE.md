@@ -19,12 +19,14 @@ discoverable across sessions.
 
 ## Stack
 
-- Python for pipeline/production scripts.
-- Jupyter notebooks for exploratory analysis and modeling experiments.
+- Python for pipeline/production scripts, kept in `scripts/`.
+- Jupyter notebooks (`notebooks/`) for exploratory analysis and modeling experiments.
+- Dependencies are listed in `requirements.txt` (currently just `requests`).
+  Install with `pip install -r requirements.txt`. Run a script with
+  `python scripts/<nome_do_script>.py`.
 
-There is no build, lint, or test tooling configured yet. When dependencies
-and tooling are introduced (e.g. `requirements.txt`/`pyproject.toml`, a
-linter, a test runner), this file should be updated with the exact commands.
+There is no lint or test tooling configured yet. When it's introduced, this
+file should be updated with the exact commands.
 
 ## Data conventions
 
@@ -50,3 +52,26 @@ and Shopping Metro Santa Cruz's results to
 
 When adding a new script, create its output subfolder following this
 `<script>/<loja>` nesting rather than inventing a new layout.
+
+## Scripts
+
+### `scripts/coleta_temperatura_feriados.py`
+
+Collects daily local temperature and holiday calendars for both stores.
+
+- **Temperature**: fetched from the Open-Meteo Historical Weather API
+  (free, no API key) using each store's approximate lat/long. Both stores
+  are in the city of São Paulo, so coordinates differ only slightly
+  (Butantã district vs. the Santa Cruz metro station area).
+- **Holidays**: computed locally (no network dependency, no external
+  holiday library) and classified as `nacional`, `regional` (state of São
+  Paulo), or `local` (municipality of São Paulo, since both stores sit in
+  the same city). Movable feasts (Carnaval, Sexta-feira Santa, Corpus
+  Christi) are derived from the Easter date via the Gauss/Meeus algorithm.
+  Dia da Consciência Negra (Nov 20) is classified `local` before 2024 and
+  `nacional` from 2024 onward, since it became a federal holiday that year
+  (Lei 14.759/2023).
+- Run with `python scripts/coleta_temperatura_feriados.py [--inicio AAAA-MM-DD] [--fim AAAA-MM-DD]`
+  (defaults to the last 2 years). Writes to
+  `outputs/coleta_temperatura_feriados/<loja>/temperatura.csv` and
+  `.../feriados.csv` per the output convention above.
