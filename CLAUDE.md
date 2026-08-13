@@ -57,12 +57,14 @@ When adding a new script, create its output subfolder following this
 
 ### `scripts/coleta_temperatura_feriados.py`
 
-Collects daily local temperature and holiday calendars for both stores.
+Collects hourly local temperature and holiday calendars for both stores.
 
-- **Temperature**: fetched from the Open-Meteo Historical Weather API
-  (free, no API key) using each store's approximate lat/long. Both stores
-  are in the city of São Paulo, so coordinates differ only slightly
-  (Butantã district vs. the Santa Cruz metro station area).
+- **Temperature**: fetched hourly (not daily aggregates) from the Open-Meteo
+  Historical Weather API (free, no API key) using each store's approximate
+  lat/long, so intraday temperature swings can be correlated with demand
+  changes during store operating hours. Both stores are in the city of São
+  Paulo, so coordinates differ only slightly (Butantã district vs. the
+  Santa Cruz metro station area).
 - **Holidays**: computed locally (no network dependency, no external
   holiday library) and classified as `nacional`, `regional` (state of São
   Paulo), or `local` (municipality of São Paulo, since both stores sit in

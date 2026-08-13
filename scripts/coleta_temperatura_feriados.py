@@ -1,12 +1,14 @@
 """
-Coleta temperatura diária local e feriados (nacionais, regionais e locais)
-para Butantã Shopping e Shopping Metro Santa Cruz.
+Coleta temperatura local hora a hora e feriados (nacionais, regionais e
+locais) para Butantã Shopping e Shopping Metro Santa Cruz.
 
 A temperatura vem da Open-Meteo Historical Weather API (gratuita, sem
-necessidade de chave) usando as coordenadas aproximadas de cada loja. Os
-feriados são calculados localmente (não dependem de rede) e classificados
-em "nacional", "regional" (estado de São Paulo) e "local" (município de
-São Paulo, onde ambas as lojas estão situadas).
+necessidade de chave) usando as coordenadas aproximadas de cada loja, em
+granularidade horária — isso permite relacionar a variação de temperatura
+ao longo do dia com a variação no consumo durante o período em que a loja
+está aberta. Os feriados são calculados localmente (não dependem de rede)
+e classificados em "nacional", "regional" (estado de São Paulo) e "local"
+(município de São Paulo, onde ambas as lojas estão situadas).
 
 Uso:
     python scripts/coleta_temperatura_feriados.py
@@ -53,20 +55,18 @@ def buscar_temperatura(loja: Loja, inicio: date, fim: date) -> list[dict]:
         "longitude": loja.longitude,
         "start_date": inicio.isoformat(),
         "end_date": fim.isoformat(),
-        "daily": "temperature_2m_max,temperature_2m_min,temperature_2m_mean",
+        "hourly": "temperature_2m",
         "timezone": "America/Sao_Paulo",
     }
     resp = requests.get(OPEN_METEO_ARCHIVE_URL, params=params, timeout=30)
     resp.raise_for_status()
-    diario = resp.json()["daily"]
+    horario = resp.json()["hourly"]
     return [
         {
-            "data": data_str,
-            "temp_max_c": diario["temperature_2m_max"][i],
-            "temp_min_c": diario["temperature_2m_min"][i],
-            "temp_media_c": diario["temperature_2m_mean"][i],
+            "data_hora": data_hora_str,
+            "temp_c": horario["temperature_2m"][i],
         }
-        for i, data_str in enumerate(diario["time"])
+        for i, data_hora_str in enumerate(horario["time"])
     ]
 
 
@@ -147,7 +147,7 @@ def main() -> None:
         destino = OUTPUT_DIR / loja.slug
         salvar_csv(temperaturas, destino / "temperatura.csv")
         salvar_csv(feriados, destino / "feriados.csv")
-        print(f"  {len(temperaturas)} dias de temperatura -> {destino / 'temperatura.csv'}")
+        print(f"  {len(temperaturas)} leituras horárias de temperatura -> {destino / 'temperatura.csv'}")
         print(f"  {len(feriados)} feriados -> {destino / 'feriados.csv'}")
 
 
