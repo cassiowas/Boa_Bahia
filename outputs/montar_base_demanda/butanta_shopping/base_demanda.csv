@@ -730,3 +730,9 @@ data,loja,temp_min_c,temp_max_c,temp_media_c,feriado,feriado_nome,feriado_tipo,e
 2026-08-11,Butantã Shopping,12.9,16.8,14.2,0,,,0,,,
 2026-08-12,Butantã Shopping,13.9,23.5,17.8,0,,,0,,,
 2026-08-13,Butantã Shopping,16.4,27.9,21.3,0,,,0,,,
+2026-08-15,Butantã Shopping,,,,0,,,1,São Paulo FC x Coritiba (Campeonato Brasileiro),jogo_futebol,MorumBIS
+2026-08-18,Butantã Shopping,,,,0,,,1,São Paulo FC x Bolívar (CONMEBOL Sul-Americana),jogo_futebol,MorumBIS
+2026-10-28,Butantã Shopping,,,,0,,,1,BTS World Tour ARIRANG (show 1 de 3),show,MorumBIS
+2026-10-29,Butantã Shopping,,,,0,,,1,Gusttavo Lima - Buteco 2026,show,MorumBIS
+2026-10-30,Butantã Shopping,,,,0,,,1,BTS World Tour ARIRANG (show 2 de 3),show,MorumBIS
+2026-10-31,Butantã Shopping,,,,0,,,1,BTS World Tour ARIRANG (show 3 de 3),show,MorumBIS
