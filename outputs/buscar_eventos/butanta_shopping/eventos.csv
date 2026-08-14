@@ -3,3 +3,9 @@ data_evento,evento,tipo,local,fonte_url,confirmado,observacoes
 2026-08-18,São Paulo FC x Bolívar (CONMEBOL Sul-Americana),jogo_futebol,MorumBIS,https://www.saopaulofc.net/calendario-de-jogos/,,
 2026-08-30,São Paulo FC - jogo mencionado sem adversário/horário confirmado na fonte,jogo_futebol,MorumBIS,https://www.saopaulofc.net/calendario-de-jogos/,,verificar adversário e horário antes de confirmar
 2026-08-01 a 2026-08-31,Sem shows confirmados no MorumBIS em agosto/2026 (estádio livre para jogos após os shows de Harry Styles em julho),show,MorumBIS,https://www.band.com.br/esportes/morumbi-tera-mais-6-shows-em-2026-veja-jogos-do-sao-paulo-afetados-202603131230,,checar novamente próximo à data - agenda de shows muda com frequência
+2026-10-28,BTS World Tour ARIRANG (show 1 de 3),show,MorumBIS,https://blognroll.com.br/agenda/bts-morumbis-2026-precos/,,ingressos esgotados - alto fluxo esperado
+2026-10-29,Gusttavo Lima - Buteco 2026,show,MorumBIS,https://www.band.com.br/esportes/shows-no-morumbi-veja-as-proximas-datas-e-os-jogos-do-sao-paulo-em-risco-202607241648,,
+2026-10-30,BTS World Tour ARIRANG (show 2 de 3),show,MorumBIS,https://blognroll.com.br/agenda/bts-morumbis-2026-precos/,,ingressos esgotados - alto fluxo esperado
+2026-10-31,BTS World Tour ARIRANG (show 3 de 3),show,MorumBIS,https://blognroll.com.br/agenda/bts-morumbis-2026-precos/,,ingressos esgotados - alto fluxo esperado
+2026-11-22,Bruno Mars,show,MorumBIS,https://www.band.com.br/esportes/shows-no-morumbi-veja-as-proximas-datas-e-os-jogos-do-sao-paulo-em-risco-202607241648,,
+2026-12-12,Show em data reservada - artista não identificado nas fontes encontradas,show,MorumBIS,https://www.band.com.br/esportes/shows-no-morumbi-veja-as-proximas-datas-e-os-jogos-do-sao-paulo-em-risco-202607241648,,verificar artista antes de confirmar - fonte não menciona quem se apresenta
